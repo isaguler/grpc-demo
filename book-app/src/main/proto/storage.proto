@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files= true;
+package com.isaguler.grpc;
+
+service WarehouseInfoService {
+  rpc getByBookId(WarehouseRequest) returns (WarehouseResponse);
+}
+
+message WarehouseResponse {
+  int64 count = 1;
+  int64 discountAmount = 2;
+}
+
+message WarehouseRequest {
+  int64 id = 1;
+}
